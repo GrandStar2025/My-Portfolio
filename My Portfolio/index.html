@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">Portfolio</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#apps" class="nav-link">Apps</a></li>
+                    <li><a href="#games" class="nav-link">Games</a></li>
+                    <li><a href="#interests" class="nav-link">Interests</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-shapes"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title gradient-text">Welcome to My Portfolio</h1>
+                <p class="hero-description">Developer, Game Creator, and Tech Enthusiast</p>
+                <button class="button" onclick="scrollToSection('apps')">
+                    <i class='bx bx-chevron-down'></i>
+                    Explore My Work
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section class="apps section" id="apps">
+        <div class="container">
+            <h2 class="section-title gradient-text">My Applications</h2>
+            <div class="apps-container">
+                <div class="app-card">
+                    <h3>App Name 1</h3>
+                    <p>Description of the first app</p>
+                    <a href="#" class="button">
+                        <i class='bx bx-download'></i>
+                        Download
+                    </a>
+                </div>
+                <div class="app-card">
+                    <h3>App Name 2</h3>
+                    <p>Description of the second app</p>
+                    <a href="#" class="button">
+                        <i class='bx bx-download'></i>
+                        Download
+                    </a>
+                </div>
+                <div class="app-card">
+                    <h3>App Name 3</h3>
+                    <p>Description of the third app</p>
+                    <a href="#" class="button">
+                        <i class='bx bx-download'></i>
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games section" id="games">
+        <div class="container">
+            <h2 class="section-title">My Games</h2>
+            <div class="games-container">
+                <div class="game-card">
+                    <h3>Game 1</h3>
+                    <p>An exciting adventure game</p>
+                    <div class="button-group">
+                        <a href="#" class="button">
+                            <i class='bx bx-download'></i>
+                            Download
+                        </a>
+                        <a href="#" class="button button-outline">
+                            <i class='bx bx-play'></i>
+                            Play Online
+                        </a>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <h3>Game 2</h3>
+                    <p>A challenging puzzle game</p>
+                    <div class="button-group">
+                        <a href="#" class="button">
+                            <i class='bx bx-download'></i>
+                            Download
+                        </a>
+                        <a href="#" class="button button-outline">
+                            <i class='bx bx-play'></i>
+                            Play Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests section" id="interests">
+        <div class="container">
+            <h2 class="section-title">My Interests</h2>
+            <div class="interests-container">
+                <div class="interest-card">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Programming</h3>
+                    <p>Passionate about creating efficient and elegant solutions</p>
+                </div>
+                <div class="interest-card">
+                    <i class='bx bx-game'></i>
+                    <h3>Game Development</h3>
+                    <p>Love creating interactive experiences</p>
+                </div>
+                <div class="interest-card">
+                    <i class='bx bx-palette'></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Focused on creating beautiful and intuitive interfaces</p>
+                </div>
+                <div class="interest-card">
+                    <i class='bx bx-book'></i>
+                    <h3>Learning</h3>
+                    <p>Always eager to learn new technologies and skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm a passionate developer with expertise in web development and game creation. My journey in technology started with a curiosity about how things work, which evolved into a career in software development.</p>
+                <p>I specialize in creating user-friendly applications and engaging games that provide meaningful experiences to users. My work is driven by a desire to combine creativity with technical excellence.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or designing new game concepts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <a href="mailto:your.email@example.com" class="button button-outline">
+                    <i class='bx bx-envelope'></i>
+                    Email Me
+                </a>
+                <a href="https://github.com/yourusername" class="button button-outline">
+                    <i class='bx bxl-github'></i>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/yourusername" class="button button-outline">
+                    <i class='bx bxl-linkedin'></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Chat -->
+    <div class="float-chat" id="float-chat">
+        <button class="chat-toggle" id="chat-toggle">
+            <i class='bx bx-message-square-detail'></i>
+        </button>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h3>Send Message</h3>
+                <button class="chat-close" id="chat-close">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div class="chat-content">
+                <textarea id="chat-message" placeholder="Type your message here..."></textarea>
+                <button class="button" onclick="sendWhatsAppMessage()">
+                    <i class='bx bxl-whatsapp'></i>
+                    Send via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

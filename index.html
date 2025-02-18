@@ -3,202 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio Website</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">Portfolio</a>
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#apps" class="nav-link">Apps</a></li>
-                    <li><a href="#games" class="nav-link">Games</a></li>
-                    <li><a href="#interests" class="nav-link">Interests</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="nav-close" id="nav-close">
-                    <i class='bx bx-x'></i>
-                </div>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
-            </div>
-        </nav>
-    </header>
-
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-shapes"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title gradient-text">Welcome to My Portfolio</h1>
-                <p class="hero-description">Developer, Game Creator, and Tech Enthusiast</p>
-                <button class="button" onclick="scrollToSection('apps')">
-                    <i class='bx bx-chevron-down'></i>
-                    Explore My Work
-                </button>
+    <section id="hero" class="hero-section">
+        <div class="hero-content animate-fade-in">
+            <h1>
+                <span class="animated-text">Creating</span>
+                <span class="gradient-text">Digital</span>
+                <span class="animated-text">Experiences</span>
+            </h1>
+            <p>Web Developer • Game Designer • Creative Developer</p>
+            <div class="button-group">
+                <button class="btn-primary" onclick="scrollToSection('about')">About Me</button>
+                <button class="btn-primary" onclick="scrollToSection('projects')">My Projects</button>
             </div>
         </div>
-    </section>
-
-    <!-- Apps Section -->
-    <section class="apps section" id="apps">
-        <div class="container">
-            <h2 class="section-title gradient-text">My Applications</h2>
-            <div class="apps-container">
-                <div class="app-card">
-                    <h3>App Name 1</h3>
-                    <p>Description of the first app</p>
-                    <a href="#" class="button">
-                        <i class='bx bx-download'></i>
-                        Download
-                    </a>
-                </div>
-                <div class="app-card">
-                    <h3>App Name 2</h3>
-                    <p>Description of the second app</p>
-                    <a href="#" class="button">
-                        <i class='bx bx-download'></i>
-                        Download
-                    </a>
-                </div>
-                <div class="app-card">
-                    <h3>App Name 3</h3>
-                    <p>Description of the third app</p>
-                    <a href="#" class="button">
-                        <i class='bx bx-download'></i>
-                        Download
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section class="games section" id="games">
-        <div class="container">
-            <h2 class="section-title">My Games</h2>
-            <div class="games-container">
-                <div class="game-card">
-                    <h3>Game 1</h3>
-                    <p>An exciting adventure game</p>
-                    <div class="button-group">
-                        <a href="#" class="button">
-                            <i class='bx bx-download'></i>
-                            Download
-                        </a>
-                        <a href="#" class="button button-outline">
-                            <i class='bx bx-play'></i>
-                            Play Online
-                        </a>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <h3>Game 2</h3>
-                    <p>A challenging puzzle game</p>
-                    <div class="button-group">
-                        <a href="#" class="button">
-                            <i class='bx bx-download'></i>
-                            Download
-                        </a>
-                        <a href="#" class="button button-outline">
-                            <i class='bx bx-play'></i>
-                            Play Online
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interests Section -->
-    <section class="interests section" id="interests">
-        <div class="container">
-            <h2 class="section-title">My Interests</h2>
-            <div class="interests-container">
-                <div class="interest-card">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Programming</h3>
-                    <p>Passionate about creating efficient and elegant solutions</p>
-                </div>
-                <div class="interest-card">
-                    <i class='bx bx-game'></i>
-                    <h3>Game Development</h3>
-                    <p>Love creating interactive experiences</p>
-                </div>
-                <div class="interest-card">
-                    <i class='bx bx-palette'></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Focused on creating beautiful and intuitive interfaces</p>
-                </div>
-                <div class="interest-card">
-                    <i class='bx bx-book'></i>
-                    <h3>Learning</h3>
-                    <p>Always eager to learn new technologies and skills</p>
-                </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about section" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I'm a passionate developer with expertise in web development and game creation. My journey in technology started with a curiosity about how things work, which evolved into a career in software development.</p>
-                <p>I specialize in creating user-friendly applications and engaging games that provide meaningful experiences to users. My work is driven by a desire to combine creativity with technical excellence.</p>
-                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or designing new game concepts.</p>
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>With a passion for creating digital experiences, I combine technical expertise with creative innovation. 
+               My approach focuses on delivering solutions that not only meet technical requirements but exceed user expectations.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Web Development Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building modern, responsive web applications using cutting-edge technologies and best practices</p>
+            </div>
+
+            <!-- Game Development Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3>Game Development</h3>
+                <p>Creating immersive gaming experiences with engaging mechanics and polished visuals</p>
+            </div>
+
+            <!-- UI/UX Design Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Designing beautiful, intuitive interfaces that enhance user experience and engagement</p>
+            </div>
+
+            <!-- Problem Solving Card -->
+            <div class="service-card animate-on-scroll">
+                <div class="icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Problem Solving</h3>
+                <p>Tackling complex challenges with innovative solutions and strategic thinking</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-container">
-                <a href="mailto:your.email@example.com" class="button button-outline">
-                    <i class='bx bx-envelope'></i>
-                    Email Me
-                </a>
-                <a href="https://github.com/yourusername" class="button button-outline">
-                    <i class='bx bxl-github'></i>
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/yourusername" class="button button-outline">
-                    <i class='bx bxl-linkedin'></i>
-                    LinkedIn
-                </a>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Featured Projects</h2>
+        <p class="section-description">Explore my latest works showcasing web development, game design, and creative coding</p>
+
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Modern Web Application</h3>
+                    <p>A full-stack React application with real-time features and responsive design</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">TailwindCSS</span>
+                    </div>
+                    <div class="project-buttons">
+                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </button>
+                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project1', '_blank')">
+                            <i class="fab fa-github"></i> Source Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Adventure Quest</h3>
+                    <p>An immersive 3D game built with Unity, featuring dynamic gameplay and AI-driven NPCs</p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">3D Design</span>
+                    </div>
+                    <div class="project-buttons">
+                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </button>
+                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project2', '_blank')">
+                            <i class="fab fa-github"></i> Source Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Creative Canvas</h3>
+                    <p>An interactive web experiment pushing the boundaries of browser capabilities</p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">WebGL</span>
+                        <span class="tag">GSAP</span>
+                    </div>
+                    <div class="project-buttons">
+                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </button>
+                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project3', '_blank')">
+                            <i class="fab fa-github"></i> Source Code
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Chat -->
-    <div class="float-chat" id="float-chat">
-        <button class="chat-toggle" id="chat-toggle">
-            <i class='bx bx-message-square-detail'></i>
-        </button>
-        <div class="chat-container" id="chat-container">
-            <div class="chat-header">
-                <h3>Send Message</h3>
-                <button class="chat-close" id="chat-close">
-                    <i class='bx bx-x'></i>
-                </button>
+    <!-- Downloads Section -->
+    <section id="downloads" class="section">
+        <h2>Downloads</h2>
+
+        <!-- Apps Section -->
+        <div class="downloads-section">
+            <h3>Apps</h3>
+            <div class="downloads-grid">
+                <!-- App 1 -->
+                <div class="download-card animate-on-scroll">
+                    <div class="download-content">
+                        <h4>App 1</h4>
+                        <p>Mobile utility app</p>
+                    </div>
+                    <a href="#app1-preview" onclick="openPreviewModal('app1')" class="btn-primary">View</a>
+                </div>
+
+                <!-- App 2 -->
+                <div class="download-card animate-on-scroll">
+                    <div class="download-content">
+                        <h4>App 2</h4>
+                        <p>Productivity tool</p>
+                    </div>
+                    <a href="#app2-preview" onclick="openPreviewModal('app2')" class="btn-primary">View</a>
+                </div>
             </div>
-            <div class="chat-content">
-                <textarea id="chat-message" placeholder="Type your message here..."></textarea>
-                <button class="button" onclick="sendWhatsAppMessage()">
-                    <i class='bx bxl-whatsapp'></i>
-                    Send via WhatsApp
-                </button>
+        </div>
+
+        <!-- Games Section -->
+        <div class="downloads-section">
+            <h3>Games</h3>
+            <div class="downloads-grid">
+                <!-- Game 1 -->
+                <div class="download-card animate-on-scroll">
+                    <div class="download-content">
+                        <h4>Game 1</h4>
+                        <p>Puzzle adventure</p>
+                    </div>
+                    <a href="#game1-preview" onclick="openPreviewModal('game1')" class="btn-primary">View</a>
+                </div>
+
+                <!-- Game 2 -->
+                <div class="download-card animate-on-scroll">
+                    <div class="download-content">
+                        <h4>Game 2</h4>
+                        <p>Action platformer</p>
+                    </div>
+                    <a href="#game2-preview" onclick="openPreviewModal('game2')" class="btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Modals -->
+    <div id="app1-preview" class="preview-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePreviewModal('app1')">&times;</span>
+            <div class="app-preview">
+                <div class="app-header">
+                    <img src="assets/app1-icon.png" alt="App 1 Icon" class="app-icon">
+                    <div class="app-info">
+                        <h3>App 1</h3>
+                        <p>Mobile utility app</p>
+                        <button class="install-btn">Install Now</button>
+                    </div>
+                </div>
+                <div class="screenshots-container">
+                    <div class="screenshots">
+                        <img src="assets/app1-screenshot1.png" alt="Screenshot 1">
+                        <img src="assets/app1-screenshot2.png" alt="Screenshot 2">
+                        <img src="assets/app1-screenshot3.png" alt="Screenshot 3">
+                    </div>
+                </div>
+                <div class="video-preview">
+                    <video controls>
+                        <source src="assets/app1-preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="app-description">
+                    <h4>Description</h4>
+                    <p>A comprehensive mobile utility app that helps you manage your daily tasks efficiently.</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <div id="app2-preview" class="preview-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePreviewModal('app2')">&times;</span>
+            <div class="app-preview">
+                <div class="app-header">
+                    <img src="assets/app2-icon.png" alt="App 2 Icon" class="app-icon">
+                    <div class="app-info">
+                        <h3>App 2</h3>
+                        <p>Productivity tool</p>
+                        <button class="install-btn">Install Now</button>
+                    </div>
+                </div>
+                <div class="screenshots-container">
+                    <div class="screenshots">
+                        <img src="assets/app2-screenshot1.png" alt="Screenshot 1">
+                        <img src="assets/app2-screenshot2.png" alt="Screenshot 2">
+                        <img src="assets/app2-screenshot3.png" alt="Screenshot 3">
+                    </div>
+                </div>
+                <div class="video-preview">
+                    <video controls>
+                        <source src="assets/app2-preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="app-description">
+                    <h4>Description</h4>
+                    <p>A productivity tool designed to boost your efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game1-preview" class="preview-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePreviewModal('game1')">&times;</span>
+            <div class="app-preview">
+                <div class="app-header">
+                    <img src="assets/game1-icon.png" alt="Game 1 Icon" class="app-icon">
+                    <div class="app-info">
+                        <h3>Game 1</h3>
+                        <p>Puzzle adventure</p>
+                        <button class="install-btn">Install Now</button>
+                    </div>
+                </div>
+                <div class="screenshots-container">
+                    <div class="screenshots">
+                        <img src="assets/game1-screenshot1.png" alt="Screenshot 1">
+                        <img src="assets/game1-screenshot2.png" alt="Screenshot 2">
+                        <img src="assets/game1-screenshot3.png" alt="Screenshot 3">
+                    </div>
+                </div>
+                <div class="video-preview">
+                    <video controls>
+                        <source src="assets/game1-preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="app-description">
+                    <h4>Description</h4>
+                    <p>Embark on a captivating puzzle adventure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game2-preview" class="preview-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePreviewModal('game2')">&times;</span>
+            <div class="app-preview">
+                <div class="app-header">
+                    <img src="assets/freefire_logo.jpeg" alt="Game 2 Icon" class="app-icon">
+                    <div class="app-info">
+                        <h3>Free Fire</h3>
+                        <p>500 MB</p>
+                        <button class="install-btn">Install Now</button>
+                    </div>
+                </div>
+                <div class="screenshots-container">
+                    <div class="screenshots">
+                        <img src="assets/ff1.jpg" alt="screenshot 1">
+                        <img src="assets/ff2.jpg" alt="Screenshot 2">
+                        <img src="assets/ff3.jpg" alt="Screenshot 3">
+                    </div>
+                </div>
+                <div class="video-preview">
+                    <video controls>
+                        <source src="assets/ffvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="app-description">
+                    <h4>Description</h4>
+                    <p>Free Fire is a free-to-play battle royale game developed and published by Garena for Android and iOS. [4] It was released on 8 December 2017. It became the most downloaded mobile game globally in 2019 and has over 1 billion downloads on Google Play Store.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

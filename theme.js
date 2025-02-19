@@ -1,53 +1,38 @@
-// Theme management ke liye main function
-function initTheme() {
-    // Theme toggle button ko dhundho
-    const themeToggle = document.getElementById('theme-toggle');
-    // Theme icon ko dhundho
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Local storage se current theme ko check karo
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    
-    // Saved theme ko apply karo
-    applyTheme(savedTheme);
-    updateIcon(savedTheme === 'dark');
-    
-    // Theme toggle button pe click event add karo
-    themeToggle.addEventListener('click', () => {
-        // Current theme ko check karo
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        // Theme ko toggle karo
-        const newTheme = isDark ? 'light' : 'dark';
-        
-        // Naya theme apply karo
-        applyTheme(newTheme);
-        updateIcon(!isDark);
-        
-        // New theme ko save karo local storage mai
-        localStorage.setItem('theme', newTheme);
-    });
+// Check for saved theme preference, otherwise use light theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        const moonIcon = document.querySelector('#theme-toggle i');
+        moonIcon.classList.remove('fa-moon');
+        moonIcon.classList.add('fa-sun');
+    }
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
 }
 
-// Theme ko apply karne ka function
-function applyTheme(theme) {
-    // HTML root element pe theme attribute set karo
-    document.documentElement.setAttribute('data-theme', theme);
-}
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const moonIcon = document.querySelector('#theme-toggle i');
 
-// Theme icon ko update karne ka function
-function updateIcon(isDark) {
-    // Theme toggle button ke icon ko dhundho
-    const themeIcon = document.getElementById('theme-toggle').querySelector('i');
+// Toggle theme function
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
-    // Icon ko update karo based on theme
-    if (isDark) {
-        // Dark theme ke liye sun icon
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    // Update theme
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update icon
+    if (newTheme === 'dark') {
+        moonIcon.classList.remove('fa-moon');
+        moonIcon.classList.add('fa-sun');
     } else {
-        // Light theme ke liye moon icon
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        moonIcon.classList.remove('fa-sun');
+        moonIcon.classList.add('fa-moon');
     }
 }
 
-// Page load hone pe theme initialize karo
-document.addEventListener('DOMContentLoaded', initTheme);
+// Add click event listener
+themeToggle.addEventListener('click', toggleTheme);

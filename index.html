@@ -21,6 +21,90 @@
     <div class="container">
         <!-- Hero Section -->
         <section id="hero" class="hero-section fade-in">
+            <div class="tech-background">
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="company-logo">Apple</div>
+                        <span>Innovation</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Microsoft</div>
+                        <span>Enterprise</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Google</div>
+                        <span>Search & AI</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Amazon</div>
+                        <span>E-commerce</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Meta</div>
+                        <span>Social</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Tesla</div>
+                        <span>EV & AI</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">NVIDIA</div>
+                        <span>GPU & AI</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Samsung</div>
+                        <span>Electronics</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">IBM</div>
+                        <span>Enterprise</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Oracle</div>
+                        <span>Database</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">OpenAI</div>
+                        <span>AI Research</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">SpaceX</div>
+                        <span>Space</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Stripe</div>
+                        <span>Payments</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">ByteDance</div>
+                        <span>Social & AI</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Rivian</div>
+                        <span>EV</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Anduril</div>
+                        <span>Defense</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Anthropic</div>
+                        <span>AI Safety</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="company-logo">Databricks</div>
+                        <span>Data & AI</span>
+                    </div>
+                    <div class="tech-item indian-tech">
+                        <div class="company-logo">Zerodha</div>
+                        <span>Fintech</span>
+                    </div>
+                    <div class="tech-item indian-tech">
+                        <div class="company-logo">Razorpay</div>
+                        <span>Payments</span>
+                    </div>
+                </div>
+            </div>
             <div class="hero-content animate-fade-in">
                 <h1>
                     <span class="animated-text">Creating</span>
@@ -44,8 +128,8 @@
         <section id="about" class="section fade-in">
             <div class="section-header">
                 <h2>About Me</h2>
-                <p>With a passion for creating digital experiences, I combine technical expertise with creative innovation. 
-                   My approach focuses on delivering solutions that not only meet technical requirements but exceed user expectations.</p>
+                <p>Hello! I'm a passionate Full Stack Developer with expertise in creating innovative digital solutions. 
+                   I blend creativity with technical skills to build engaging web applications and immersive gaming experiences.</p>
             </div>
 
             <div class="services-grid">
@@ -55,7 +139,8 @@
                         <i class="fa-solid fa-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Building modern, responsive web applications using cutting-edge technologies and best practices</p>
+                    <p>Crafting responsive and dynamic websites using modern technologies like React, Node.js, and MongoDB. 
+                       Specialized in creating seamless user experiences with clean, efficient code.</p>
                 </div>
 
                 <!-- Game Development Card -->
@@ -64,25 +149,28 @@
                         <i class="fa-solid fa-gamepad"></i>
                     </div>
                     <h3>Game Development</h3>
-                    <p>Creating immersive gaming experiences with engaging mechanics and polished visuals</p>
+                    <p>Developing engaging games with Unity and C#. From concept to deployment, I create interactive experiences 
+                       that combine stunning visuals with compelling gameplay mechanics.</p>
                 </div>
 
                 <!-- UI/UX Design Card -->
                 <div class="service-card animate-on-scroll fade-in">
                     <div class="icon">
-                        <i class="fa-solid fa-pencil-ruler"></i>
+                        <i class="fa-solid fa-palette"></i>
                     </div>
                     <h3>UI/UX Design</h3>
-                    <p>Designing beautiful, intuitive interfaces that enhance user experience and engagement</p>
+                    <p>Creating beautiful and intuitive user interfaces with a focus on user experience. 
+                       Skilled in wireframing, prototyping, and implementing modern design principles.</p>
                 </div>
 
-                <!-- Problem Solving Card -->
+                <!-- Creative Development Card -->
                 <div class="service-card animate-on-scroll fade-in">
                     <div class="icon">
-                        <i class="fa-solid fa-brain"></i>
+                        <i class="fa-solid fa-lightbulb"></i>
                     </div>
-                    <h3>Problem Solving</h3>
-                    <p>Tackling complex challenges with innovative solutions and strategic thinking</p>
+                    <h3>Creative Development</h3>
+                    <p>Bringing ideas to life through creative coding and innovative solutions. 
+                       Experienced in developing unique digital experiences that stand out.</p>
                 </div>
             </div>
         </section>
@@ -93,10 +181,10 @@
             <p class="section-description">Explore my latest works showcasing web development, game design, and creative coding</p>
 
             <div class="projects-container">
-                <button class="scroll-button scroll-left" onclick="scrollProjects('left')">
+                <button class="scroll-btn prev" onclick="scrollProjects('prev')">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="scroll-button scroll-right" onclick="scrollProjects('right')">
+                <button class="scroll-btn next" onclick="scrollProjects('next')">
                     <i class="fas fa-chevron-right"></i>
                 </button>
                 <div class="projects-grid">

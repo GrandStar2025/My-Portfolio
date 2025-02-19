@@ -6,25 +6,7 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Project scroll functionality
-function scrollProjects(direction) {
-    const container = document.querySelector('.projects-grid');
-    const scrollAmount = 400; // Adjust this value to control scroll distance
-    
-    if (direction === 'left') {
-        container.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    } else {
-        container.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Intersection Observer for scroll animations
+// Scroll animation for elements
 document.addEventListener('DOMContentLoaded', function() {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
@@ -41,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.animate-on-scroll').forEach((element) => {
         observer.observe(element);
     });
+
+    // Initial button visibility check
+    updateScrollButtons();
 });
 
 // Add hover effects for interactive elements
@@ -110,81 +95,41 @@ document.querySelectorAll('.screenshots-container').forEach(container => {
     });
 });
 
-// Dark mode toggle ka functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Dark mode button ko select karo
-    const themeToggle = document.getElementById('theme-toggle');
+// Function to scroll projects horizontally
+function scrollProjects(direction) {
+    const container = document.querySelector('.projects-grid');
+    const scrollAmount = 400; // Adjust this value based on your needs
     
-    // Check karo ki pehle se dark mode hai ya nahi
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    if (direction === 'next') {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    } else {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     }
     
-    // Dark mode button pe click karne pe kya hoga
-    themeToggle.addEventListener('click', function() {
-        // Current theme check karo
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        
-        if (currentTheme === 'dark') {
-            // Dark se light mode mai switch karo
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-        } else {
-            // Light se dark mode mai switch karo
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-        }
-    });
-});
+    // Update button visibility
+    updateScrollButtons();
+}
 
-// Projects ke horizontal scroll ka functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Scroll buttons ko select karo
-    const scrollLeftBtn = document.querySelector('.scroll-left');
-    const scrollRightBtn = document.querySelector('.scroll-right');
-    const projectsGrid = document.querySelector('.projects-grid');
+// Function to update scroll button visibility
+function updateScrollButtons() {
+    const container = document.querySelector('.projects-grid');
+    const prevBtn = document.querySelector('.scroll-btn.prev');
+    const nextBtn = document.querySelector('.scroll-btn.next');
     
-    // Left button pe click karne pe
-    scrollLeftBtn.addEventListener('click', function() {
-        // Smooth scroll left
-        projectsGrid.scrollBy({
-            left: -400,  // 400px left scroll karo
-            behavior: 'smooth'  // Smooth animation ke sath
-        });
-    });
+    // Show/hide previous button
+    if (container.scrollLeft <= 0) {
+        prevBtn.classList.add('hidden');
+    } else {
+        prevBtn.classList.remove('hidden');
+    }
     
-    // Right button pe click karne pe
-    scrollRightBtn.addEventListener('click', function() {
-        // Smooth scroll right
-        projectsGrid.scrollBy({
-            left: 400,   // 400px right scroll karo
-            behavior: 'smooth'  // Smooth animation ke sath
-        });
-    });
-});
+    // Show/hide next button
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        nextBtn.classList.add('hidden');
+    } else {
+        nextBtn.classList.remove('hidden');
+    }
+}
 
-// Scroll animations ke liye - jab elements viewport mai aaye tab animate karo
-const observerOptions = {
-    root: null,  // Viewport ko observe karo
-    threshold: 0.1  // 10% element dikhne pe trigger karo
-};
-
-// Animation observer create karo
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        // Agar element viewport mai aa gaya hai
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');  // visible class add karo
-            observer.unobserve(entry.target);  // Ab isko observe karna band karo
-        }
-    });
-}, observerOptions);
-
-// Saare animate-on-scroll elements ko observe karna shuru karo
-document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => observer.observe(el));
-});
+// Add scroll event listener to update buttons
+document.querySelector('.projects-grid').addEventListener('scroll', updateScrollButtons);

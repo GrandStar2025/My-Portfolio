@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Game 1 - Puzzle Adventure</title>
+    <style>
+        .app-details {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+        }
+        .app-info h1 {
+            margin: 0;
+        }
+        .app-info p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .media-gallery {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .media-item {
+            flex: 0 0 auto;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .media-item video {
+            height: 100%;
+            width: auto;
+            border-radius: 10px;
+        }
+        .media-item img {
+            height: 100%;
+            width: auto;
+            border-radius: 10px;
+        }
+        .install-btn {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-details">
+        <div class="app-header">
+            <img src="../assets/game1-icon.png" alt="Game 1 Icon" class="app-icon">
+            <div class="app-info">
+                <h1>Game 1</h1>
+                <p>Puzzle adventure</p>
+                <button class="btn-primary install-btn">Install Now</button>
+            </div>
+        </div>
+
+        <div class="media-gallery">
+            <div class="media-item">
+                <video controls>
+                    <source src="../assets/game1-preview.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="media-item">
+                <img src="../assets/game1-screenshot1.png" alt="Screenshot 1">
+            </div>
+            <div class="media-item">
+                <img src="../assets/game1-screenshot2.png" alt="Screenshot 2">
+            </div>
+            <div class="media-item">
+                <img src="../assets/game1-screenshot3.png" alt="Screenshot 3">
+            </div>
+        </div>
+
+        <div class="app-description">
+            <h2>Description</h2>
+            <p>Embark on a captivating puzzle adventure. Challenge your mind with intricate puzzles, explore beautiful environments, and uncover an engaging story.</p>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

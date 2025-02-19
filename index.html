@@ -3,340 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content animate-fade-in">
-            <h1>
-                <span class="animated-text">Creating</span>
-                <span class="gradient-text">Digital</span>
-                <span class="animated-text">Experiences</span>
-            </h1>
-            <p>Web Developer • Game Designer • Creative Developer</p>
-            <div class="button-group">
-                <button class="btn-primary" onclick="scrollToSection('about')">About Me</button>
-                <button class="btn-primary" onclick="scrollToSection('projects')">My Projects</button>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </div>
-    </section>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle-fixed">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-header">
-            <h2>About Me</h2>
-            <p>With a passion for creating digital experiences, I combine technical expertise with creative innovation. 
-               My approach focuses on delivering solutions that not only meet technical requirements but exceed user expectations.</p>
-        </div>
+    <a href="mailto:k5449295@gmail.com?subject=Message from Portfolio&body=Send from My Portfolio:%0D%0A%0D%0A" class="chat-button-fixed">
+        <i class="fas fa-comment-dots"></i>
+        <span class="tooltip">Contact Me</span>
+    </a>
 
-        <div class="services-grid">
-            <!-- Web Development Card -->
-            <div class="service-card animate-on-scroll">
-                <div class="icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>Web Development</h3>
-                <p>Building modern, responsive web applications using cutting-edge technologies and best practices</p>
-            </div>
-
-            <!-- Game Development Card -->
-            <div class="service-card animate-on-scroll">
-                <div class="icon">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <h3>Game Development</h3>
-                <p>Creating immersive gaming experiences with engaging mechanics and polished visuals</p>
-            </div>
-
-            <!-- UI/UX Design Card -->
-            <div class="service-card animate-on-scroll">
-                <div class="icon">
-                    <i class="fas fa-pencil-ruler"></i>
-                </div>
-                <h3>UI/UX Design</h3>
-                <p>Designing beautiful, intuitive interfaces that enhance user experience and engagement</p>
-            </div>
-
-            <!-- Problem Solving Card -->
-            <div class="service-card animate-on-scroll">
-                <div class="icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <h3>Problem Solving</h3>
-                <p>Tackling complex challenges with innovative solutions and strategic thinking</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2>Featured Projects</h2>
-        <p class="section-description">Explore my latest works showcasing web development, game design, and creative coding</p>
-
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3>Modern Web Application</h3>
-                    <p>A full-stack React application with real-time features and responsive design</p>
-                    <div class="tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">TailwindCSS</span>
-                    </div>
-                    <div class="project-buttons">
-                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </button>
-                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project1', '_blank')">
-                            <i class="fab fa-github"></i> Source Code
-                        </button>
-                    </div>
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section fade-in">
+            <div class="hero-content animate-fade-in">
+                <h1>
+                    <span class="animated-text">Creating</span>
+                    <span class="gradient-text">Digital</span>
+                    <span class="animated-text">Experiences</span>
+                </h1>
+                <p>Web Developer • Game Designer • Creative Developer</p>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="scrollToSection('about')">About Me</button>
+                    <button class="btn-primary" onclick="scrollToSection('projects')">My Projects</button>
                 </div>
             </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Project Card 2 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3>Adventure Quest</h3>
-                    <p>An immersive 3D game built with Unity, featuring dynamic gameplay and AI-driven NPCs</p>
-                    <div class="tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">3D Design</span>
+        <!-- About Section -->
+        <section id="about" class="section fade-in">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>With a passion for creating digital experiences, I combine technical expertise with creative innovation. 
+                   My approach focuses on delivering solutions that not only meet technical requirements but exceed user expectations.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Web Development Card -->
+                <div class="service-card animate-on-scroll fade-in">
+                    <div class="icon">
+                        <i class="fa-solid fa-code"></i>
                     </div>
-                    <div class="project-buttons">
-                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </button>
-                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project2', '_blank')">
-                            <i class="fab fa-github"></i> Source Code
-                        </button>
+                    <h3>Web Development</h3>
+                    <p>Building modern, responsive web applications using cutting-edge technologies and best practices</p>
+                </div>
+
+                <!-- Game Development Card -->
+                <div class="service-card animate-on-scroll fade-in">
+                    <div class="icon">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3>Game Development</h3>
+                    <p>Creating immersive gaming experiences with engaging mechanics and polished visuals</p>
+                </div>
+
+                <!-- UI/UX Design Card -->
+                <div class="service-card animate-on-scroll fade-in">
+                    <div class="icon">
+                        <i class="fa-solid fa-pencil-ruler"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing beautiful, intuitive interfaces that enhance user experience and engagement</p>
+                </div>
+
+                <!-- Problem Solving Card -->
+                <div class="service-card animate-on-scroll fade-in">
+                    <div class="icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3>Problem Solving</h3>
+                    <p>Tackling complex challenges with innovative solutions and strategic thinking</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section fade-in">
+            <h2>Featured Projects</h2>
+            <p class="section-description">Explore my latest works showcasing web development, game design, and creative coding</p>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card animate-on-scroll fade-in">
+                    <img src="https://placehold.co/600x400/007bff/ffffff?text=Modern+Web+App" alt="Modern Web Application" class="project-image">
+                    <div class="project-content">
+                        <h3>Modern Web Application</h3>
+                        <p>A full-stack React application with real-time features and responsive design</p>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">TailwindCSS</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                <i class="fa-solid fa-external-link-alt"></i> View Project
+                            </button>
+                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project1', '_blank')">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card animate-on-scroll fade-in">
+                    <img src="https://placehold.co/600x400/28a745/ffffff?text=Adventure+Quest" alt="Adventure Quest" class="project-image">
+                    <div class="project-content">
+                        <h3>Adventure Quest</h3>
+                        <p>An immersive 3D game built with Unity, featuring dynamic gameplay and AI-driven NPCs</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">3D Design</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                <i class="fa-solid fa-external-link-alt"></i> View Project
+                            </button>
+                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project2', '_blank')">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card animate-on-scroll fade-in">
+                    <img src="https://placehold.co/600x400/dc3545/ffffff?text=Creative+Canvas" alt="Creative Canvas" class="project-image">
+                    <div class="project-content">
+                        <h3>Creative Canvas</h3>
+                        <p>An interactive web experiment pushing the boundaries of browser capabilities</p>
+                        <div class="tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">WebGL</span>
+                            <span class="tag">GSAP</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                <i class="fa-solid fa-external-link-alt"></i> View Project
+                            </button>
+                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project3', '_blank')">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads Section -->
+        <section id="downloads" class="section fade-in">
+            <h2>Downloads</h2>
+
+            <!-- Apps Section -->
+            <div class="downloads-section">
+                <h3>Apps</h3>
+                <div class="downloads-grid">
+                    <!-- App 1 -->
+                    <div class="download-card animate-on-scroll fade-in">
+                        <img src="assets/app1-icon.png" alt="App 1 Icon" class="app-icon">
+                        <div class="download-content">
+                            <div class="app-info">
+                                <h4>App 1</h4>
+                                <span class="app-size">25 MB</span>
+                            </div>
+                            <a href="apps/app1.html" class="btn-primary">View</a>
+                        </div>
+                    </div>
+
+                    <!-- App 2 -->
+                    <div class="download-card animate-on-scroll fade-in">
+                        <img src="assets/app2-icon.png" alt="App 2 Icon" class="app-icon">
+                        <div class="download-content">
+                            <div class="app-info">
+                                <h4>App 2</h4>
+                                <span class="app-size">40 MB</span>
+                            </div>
+                            <a href="apps/app2.html" class="btn-primary">View</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Card 3 -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3>Creative Canvas</h3>
-                    <p>An interactive web experiment pushing the boundaries of browser capabilities</p>
-                    <div class="tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">WebGL</span>
-                        <span class="tag">GSAP</span>
+            <!-- Games Section -->
+            <div class="downloads-section">
+                <h3>Games</h3>
+                <div class="downloads-grid">
+                    <!-- Game 1 -->
+                    <div class="download-card animate-on-scroll fade-in">
+                        <img src="assets/game1-icon.png" alt="Game 1 Icon" class="app-icon">
+                        <div class="download-content">
+                            <div class="app-info">
+                                <h4>Game 1</h4>
+                                <span class="app-size">150 MB</span>
+                            </div>
+                            <a href="games/game1.html" class="btn-primary">View</a>
+                        </div>
                     </div>
-                    <div class="project-buttons">
-                        <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </button>
-                        <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project3', '_blank')">
-                            <i class="fab fa-github"></i> Source Code
-                        </button>
+
+                    <!-- Game 2 -->
+                    <div class="download-card animate-on-scroll fade-in">
+                        <img src="assets/freefire_logo.jpeg" alt="Free Fire Icon" class="app-icon">
+                        <div class="download-content">
+                            <div class="app-info">
+                                <h4>Free Fire</h4>
+                                <span class="app-size">500 MB</span>
+                            </div>
+                            <a href="games/game2.html" class="btn-primary">View</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Downloads Section -->
-    <section id="downloads" class="section">
-        <h2>Downloads</h2>
-
-        <!-- Apps Section -->
-        <div class="downloads-section">
-            <h3>Apps</h3>
-            <div class="downloads-grid">
-                <!-- App 1 -->
-                <div class="download-card animate-on-scroll">
-                    <div class="download-content">
-                        <h4>App 1</h4>
-                        <p>Mobile utility app</p>
-                    </div>
-                    <a href="#app1-preview" onclick="openPreviewModal('app1')" class="btn-primary">View</a>
-                </div>
-
-                <!-- App 2 -->
-                <div class="download-card animate-on-scroll">
-                    <div class="download-content">
-                        <h4>App 2</h4>
-                        <p>Productivity tool</p>
-                    </div>
-                    <a href="#app2-preview" onclick="openPreviewModal('app2')" class="btn-primary">View</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Games Section -->
-        <div class="downloads-section">
-            <h3>Games</h3>
-            <div class="downloads-grid">
-                <!-- Game 1 -->
-                <div class="download-card animate-on-scroll">
-                    <div class="download-content">
-                        <h4>Game 1</h4>
-                        <p>Puzzle adventure</p>
-                    </div>
-                    <a href="#game1-preview" onclick="openPreviewModal('game1')" class="btn-primary">View</a>
-                </div>
-
-                <!-- Game 2 -->
-                <div class="download-card animate-on-scroll">
-                    <div class="download-content">
-                        <h4>Game 2</h4>
-                        <p>Action platformer</p>
-                    </div>
-                    <a href="#game2-preview" onclick="openPreviewModal('game2')" class="btn-primary">View</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Preview Modals -->
-    <div id="app1-preview" class="preview-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePreviewModal('app1')">&times;</span>
-            <div class="app-preview">
-                <div class="app-header">
-                    <img src="assets/app1-icon.png" alt="App 1 Icon" class="app-icon">
-                    <div class="app-info">
-                        <h3>App 1</h3>
-                        <p>Mobile utility app</p>
-                        <button class="install-btn">Install Now</button>
-                    </div>
-                </div>
-                <div class="screenshots-container">
-                    <div class="screenshots">
-                        <img src="assets/app1-screenshot1.png" alt="Screenshot 1">
-                        <img src="assets/app1-screenshot2.png" alt="Screenshot 2">
-                        <img src="assets/app1-screenshot3.png" alt="Screenshot 3">
-                    </div>
-                </div>
-                <div class="video-preview">
-                    <video controls>
-                        <source src="assets/app1-preview.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="app-description">
-                    <h4>Description</h4>
-                    <p>A comprehensive mobile utility app that helps you manage your daily tasks efficiently.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="app2-preview" class="preview-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePreviewModal('app2')">&times;</span>
-            <div class="app-preview">
-                <div class="app-header">
-                    <img src="assets/app2-icon.png" alt="App 2 Icon" class="app-icon">
-                    <div class="app-info">
-                        <h3>App 2</h3>
-                        <p>Productivity tool</p>
-                        <button class="install-btn">Install Now</button>
-                    </div>
-                </div>
-                <div class="screenshots-container">
-                    <div class="screenshots">
-                        <img src="assets/app2-screenshot1.png" alt="Screenshot 1">
-                        <img src="assets/app2-screenshot2.png" alt="Screenshot 2">
-                        <img src="assets/app2-screenshot3.png" alt="Screenshot 3">
-                    </div>
-                </div>
-                <div class="video-preview">
-                    <video controls>
-                        <source src="assets/app2-preview.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="app-description">
-                    <h4>Description</h4>
-                    <p>A productivity tool designed to boost your efficiency.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="game1-preview" class="preview-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePreviewModal('game1')">&times;</span>
-            <div class="app-preview">
-                <div class="app-header">
-                    <img src="assets/game1-icon.png" alt="Game 1 Icon" class="app-icon">
-                    <div class="app-info">
-                        <h3>Game 1</h3>
-                        <p>Puzzle adventure</p>
-                        <button class="install-btn">Install Now</button>
-                    </div>
-                </div>
-                <div class="screenshots-container">
-                    <div class="screenshots">
-                        <img src="assets/game1-screenshot1.png" alt="Screenshot 1">
-                        <img src="assets/game1-screenshot2.png" alt="Screenshot 2">
-                        <img src="assets/game1-screenshot3.png" alt="Screenshot 3">
-                    </div>
-                </div>
-                <div class="video-preview">
-                    <video controls>
-                        <source src="assets/game1-preview.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="app-description">
-                    <h4>Description</h4>
-                    <p>Embark on a captivating puzzle adventure.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="game2-preview" class="preview-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePreviewModal('game2')">&times;</span>
-            <div class="app-preview">
-                <div class="app-header">
-                    <img src="assets/freefire_logo.jpeg" alt="Game 2 Icon" class="app-icon">
-                    <div class="app-info">
-                        <h3>Free Fire</h3>
-                        <p>500 MB</p>
-                        <button class="install-btn">Install Now</button>
-                    </div>
-                </div>
-                <div class="screenshots-container">
-                    <div class="screenshots">
-                        <img src="assets/ff1.jpg" alt="screenshot 1">
-                        <img src="assets/ff2.jpg" alt="Screenshot 2">
-                        <img src="assets/ff3.jpg" alt="Screenshot 3">
-                    </div>
-                </div>
-                <div class="video-preview">
-                    <video controls>
-                        <source src="assets/ffvideo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="app-description">
-                    <h4>Description</h4>
-                    <p>Free Fire is a free-to-play battle royale game developed and published by Garena for Android and iOS. [4] It was released on 8 December 2017. It became the most downloaded mobile game globally in 2019 and has over 1 billion downloads on Google Play Store.</p>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 
     <!-- JavaScript file -->
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

@@ -52,31 +52,6 @@ window.addEventListener('scroll', function() {
     // You can add a progress bar here if needed
 });
 
-// Modal functions
-function openPreviewModal(id) {
-    const modal = document.getElementById(`${id}-preview`);
-    if (modal) {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closePreviewModal(id) {
-    const modal = document.getElementById(`${id}-preview`);
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', function(event) {
-    if (event.target.classList.contains('preview-modal')) {
-        const modalId = event.target.id.replace('-preview', '');
-        closePreviewModal(modalId);
-    }
-});
-
 // Handle install button clicks
 document.querySelectorAll('.install-btn').forEach(button => {
     button.addEventListener('click', function() {

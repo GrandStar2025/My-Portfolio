@@ -1,3 +1,35 @@
+/* Root Variables - ye colors aur basic values store karne ke liye hai */
+:root {
+    /* Light mode colors */
+    --primary-color: #4f46e5;      /* Main color - buttons aur highlights ke liye */
+    --secondary-color: #7c3aed;    /* Secondary color - gradients aur accents ke liye */
+    --accent-color: #06b6d4;       /* Accent color - special elements ke liye */
+    --background-color: #f8fafc;   /* Background color - pure website ka background */
+    --card-bg: #ffffff;            /* Card background - cards ka background color */
+    --text-color: #1e293b;         /* Text color - normal text ka color */
+    --border-color: #e2e8f0;       /* Border color - borders ke liye */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color - box shadows ke liye */
+    --gradient-1: linear-gradient(135deg, #4f46e5, #7c3aed); /* Gradient 1 - primary aur secondary colors ka mix */
+    --gradient-2: linear-gradient(135deg, #06b6d4, #3b82f6); /* Gradient 2 - accent aur secondary colors ka mix */
+    --gradient-3: linear-gradient(135deg, #8b5cf6, #d946ef); /* Gradient 3 - secondary aur accent colors ka mix */
+}
+
+/* Dark Mode Colors - jab dark mode on ho tab ye colors use honge */
+[data-theme="dark"] {
+    --background-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #e2e8f0;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Basic Reset - browser ke default styles ko reset karta hai */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -241,142 +273,89 @@ body {
 }
 
 /* Projects Section */
+.projects-container {
+    position: relative;
+    width: 100%;
+    padding: 0 3rem;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
     gap: 2rem;
     width: 100%;
-    margin: 0 auto;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
 .project-card {
+    min-width: 350px;
+    scroll-snap-align: start;
     background: var(--card-bg);
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.project-content {
-    padding: 1.25rem;
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.project-card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-}
-
-.tags {
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-1);
+    border: none;
+    color: white;
+    cursor: pointer;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.tag {
-    background: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
     transition: all 0.3s ease;
 }
 
-.tag:hover {
-    background: rgba(59, 130, 246, 0.2);
-    transform: translateY(-2px);
+.scroll-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.project-buttons {
-    display: flex;
-    gap: 1rem;
+.scroll-left {
+    left: 0;
 }
 
-.project-buttons .btn-primary,
-.project-buttons .btn-outline {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    padding: 0.75rem 1.25rem;
-}
-
-.project-buttons i {
-    font-size: 1.1rem;
-}
-
-[data-theme="dark"] .project-card h3 {
-    background: linear-gradient(135deg, #60a5fa, #3b82f6);
-    -webkit-background-clip: text;
-}
-
-[data-theme="dark"] .tag {
-    background: rgba(96, 165, 250, 0.1);
-    color: #60a5fa;
-}
-
-.project-image {
-    aspect-ratio: 16/9;
-    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
-    transform: translateZ(10px);
-    box-shadow: 0 5px 15px var(--shadow-color);
-    position: relative;
-    overflow: visible;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.project-card p {
-    color: #6b7280;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-}
-
-.tag {
-    background-color: #f3f4f6;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.75rem;
-    color: #3b82f6;
-}
-
-.project-buttons {
-    display: flex;
-    gap: 0.75rem;
+.scroll-right {
+    right: 0;
 }
 
 /* Featured Projects */
@@ -1141,15 +1120,13 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 16px;
+    height: 4px;
+    background: var(--gradient-1);
 }
 
-.project-card:hover::before {
-    opacity: 0.1;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {

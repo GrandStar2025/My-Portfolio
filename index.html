@@ -92,69 +92,77 @@
             <h2>Featured Projects</h2>
             <p class="section-description">Explore my latest works showcasing web development, game design, and creative coding</p>
 
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card animate-on-scroll fade-in">
-                    <img src="https://placehold.co/600x400/007bff/ffffff?text=Modern+Web+App" alt="Modern Web Application" class="project-image">
-                    <div class="project-content">
-                        <h3>Modern Web Application</h3>
-                        <p>A full-stack React application with real-time features and responsive design</p>
-                        <div class="tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">TailwindCSS</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                                <i class="fa-solid fa-external-link-alt"></i> View Project
-                            </button>
-                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project1', '_blank')">
-                                <i class="fa-brands fa-github"></i> Source Code
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card animate-on-scroll fade-in">
-                    <img src="https://placehold.co/600x400/28a745/ffffff?text=Adventure+Quest" alt="Adventure Quest" class="project-image">
-                    <div class="project-content">
-                        <h3>Adventure Quest</h3>
-                        <p>An immersive 3D game built with Unity, featuring dynamic gameplay and AI-driven NPCs</p>
-                        <div class="tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">3D Design</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                                <i class="fa-solid fa-external-link-alt"></i> View Project
-                            </button>
-                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project2', '_blank')">
-                                <i class="fa-brands fa-github"></i> Source Code
-                            </button>
+            <div class="projects-container">
+                <button class="scroll-button scroll-left" onclick="scrollProjects('left')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-button scroll-right" onclick="scrollProjects('right')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card animate-on-scroll fade-in">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Modern+Web+App" alt="Modern Web Application" class="project-image">
+                        <div class="project-content">
+                            <h3>Modern Web Application</h3>
+                            <p>A full-stack React application with real-time features and responsive design</p>
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">TailwindCSS</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                    <i class="fa-solid fa-external-link-alt"></i> View Project
+                                </button>
+                                <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project1', '_blank')">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project Card 3 -->
-                <div class="project-card animate-on-scroll fade-in">
-                    <img src="https://placehold.co/600x400/dc3545/ffffff?text=Creative+Canvas" alt="Creative Canvas" class="project-image">
-                    <div class="project-content">
-                        <h3>Creative Canvas</h3>
-                        <p>An interactive web experiment pushing the boundaries of browser capabilities</p>
-                        <div class="tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">WebGL</span>
-                            <span class="tag">GSAP</span>
+                    <!-- Project Card 2 -->
+                    <div class="project-card animate-on-scroll fade-in">
+                        <img src="https://placehold.co/600x400/28a745/ffffff?text=Adventure+Quest" alt="Adventure Quest" class="project-image">
+                        <div class="project-content">
+                            <h3>Adventure Quest</h3>
+                            <p>An immersive 3D game built with Unity, featuring dynamic gameplay and AI-driven NPCs</p>
+                            <div class="tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">3D Design</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                    <i class="fa-solid fa-external-link-alt"></i> View Project
+                                </button>
+                                <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project2', '_blank')">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </button>
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <button class="btn-primary btn-sm" onclick="window.location.href='#'">
-                                <i class="fa-solid fa-external-link-alt"></i> View Project
-                            </button>
-                            <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project3', '_blank')">
-                                <i class="fa-brands fa-github"></i> Source Code
-                            </button>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card animate-on-scroll fade-in">
+                        <img src="https://placehold.co/600x400/dc3545/ffffff?text=Creative+Canvas" alt="Creative Canvas" class="project-image">
+                        <div class="project-content">
+                            <h3>Creative Canvas</h3>
+                            <p>An interactive web experiment pushing the boundaries of browser capabilities</p>
+                            <div class="tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">WebGL</span>
+                                <span class="tag">GSAP</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-primary btn-sm" onclick="window.location.href='#'">
+                                    <i class="fa-solid fa-external-link-alt"></i> View Project
+                                </button>
+                                <button class="btn-outline btn-sm" onclick="window.open('https://github.com/username/project3', '_blank')">
+                                    <i class="fa-brands fa-github"></i> Source Code
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,25 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Scroll animation for elements
+// Project scroll functionality
+function scrollProjects(direction) {
+    const container = document.querySelector('.projects-grid');
+    const scrollAmount = 400; // Adjust this value to control scroll distance
+    
+    if (direction === 'left') {
+        container.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    } else {
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Intersection Observer for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
@@ -90,4 +108,83 @@ document.querySelectorAll('.screenshots-container').forEach(container => {
         const walk = (x - startX) * 2;
         container.scrollLeft = scrollLeft - walk;
     });
+});
+
+// Dark mode toggle ka functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Dark mode button ko select karo
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check karo ki pehle se dark mode hai ya nahi
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    // Dark mode button pe click karne pe kya hoga
+    themeToggle.addEventListener('click', function() {
+        // Current theme check karo
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        
+        if (currentTheme === 'dark') {
+            // Dark se light mode mai switch karo
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+        } else {
+            // Light se dark mode mai switch karo
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+    });
+});
+
+// Projects ke horizontal scroll ka functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll buttons ko select karo
+    const scrollLeftBtn = document.querySelector('.scroll-left');
+    const scrollRightBtn = document.querySelector('.scroll-right');
+    const projectsGrid = document.querySelector('.projects-grid');
+    
+    // Left button pe click karne pe
+    scrollLeftBtn.addEventListener('click', function() {
+        // Smooth scroll left
+        projectsGrid.scrollBy({
+            left: -400,  // 400px left scroll karo
+            behavior: 'smooth'  // Smooth animation ke sath
+        });
+    });
+    
+    // Right button pe click karne pe
+    scrollRightBtn.addEventListener('click', function() {
+        // Smooth scroll right
+        projectsGrid.scrollBy({
+            left: 400,   // 400px right scroll karo
+            behavior: 'smooth'  // Smooth animation ke sath
+        });
+    });
+});
+
+// Scroll animations ke liye - jab elements viewport mai aaye tab animate karo
+const observerOptions = {
+    root: null,  // Viewport ko observe karo
+    threshold: 0.1  // 10% element dikhne pe trigger karo
+};
+
+// Animation observer create karo
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        // Agar element viewport mai aa gaya hai
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');  // visible class add karo
+            observer.unobserve(entry.target);  // Ab isko observe karna band karo
+        }
+    });
+}, observerOptions);
+
+// Saare animate-on-scroll elements ko observe karna shuru karo
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 });
